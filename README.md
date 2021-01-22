@@ -1,1 +1,3 @@
-# Selenium_Basics
+# Selenium Basics
+**Installation:**
+pip install selenium
