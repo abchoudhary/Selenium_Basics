@@ -58,3 +58,16 @@ for handle in handles:
     print(driver.title)
 driver.close()
 ```
+**Web Tables:**
+* Get the row and column count by identifying rows and columns using xpath.
+* Run a for loop for both rows and columns.(leave the header out for rows, start loop from 2).
+```
+row_count = len(driver.find_elements_by_xpath("//table/tbody/tr"))
+col_count = len(driver.find_elements_by_xpath("//table/tbody/tr/th"))
+
+for row in range(2, row_count+1):
+    for col in range(1, col_count+1):
+        data = driver.find_element_by_xpath("//table/tbody/tr["+str(row)+"]/td["+str(col)+"]").text
+        print(data, end="   ")
+    print()
+```
