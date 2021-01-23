@@ -78,6 +78,17 @@ actions = ActionChains(driver)
     ```
     actions.move_to_element(element1).move_to_element(element2).click().perform()
     ```
+**Links:**
+```
+links = driver.find_elements_by_tag_name("a")
+
+# Number of links on the page
+print(len(links))
+
+# print all the links
+for link in links:
+    print(link.text)
+```
 **Waits:**
 * Implicit Wait: Checks the DOM for a certain amount of time when trying to find any element (or elements) not immediately available.
   ```
@@ -177,3 +188,28 @@ for row in range(2, row_count+1):
   ```
   driver.delete_all_cookies()
   ```
+**Logging:**
+```
+import logging
+logging.basicConfig(
+    filename="D:\\Selenium with Python\\Selenium_Basics\\Logging\\automation.log",
+    format="%(asctime)s : %(levelname)s : %(message)s",
+    datefmt="%m/%d/%Y %I:%M:%S %p",
+    level=logging.DEBUG
+)
+logging.info("This is an INFO message")
+
+OR
+
+import logging
+logging.basicConfig(
+    filename="D:\\Selenium with Python\\Selenium_Basics\\Logging\\automation.log",
+    format="%(asctime)s : %(levelname)s : %(message)s",
+    datefmt="%m/%d/%Y %I:%M:%S %p"
+)
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+logger.info("This is an info message")
+```

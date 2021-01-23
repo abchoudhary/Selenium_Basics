@@ -17,8 +17,7 @@ driver.find_element_by_class_name("promoCode").click()
 driver.find_element_by_class_name("promoCode").send_keys("rahulshettyacademy")
 driver.find_element_by_class_name("promoBtn").click()
 
-# Explicit wait:
-# waits for a certain condition to occur before proceeding further in the code.
+# Explicit wait: waits for a certain condition to occur before proceeding further in the code.
 wait = WebDriverWait(driver, 10)
 wait.until(ec.visibility_of_element_located((By.CLASS_NAME, "promoInfo")))
 print(driver.find_element(By.CLASS_NAME, "promoInfo").text)
