@@ -60,7 +60,7 @@ driver.close()
 ```
 **Web Tables:**
 * Get the row and column count by identifying rows and columns using xpath.
-* Run a for loop for both rows and columns.(leave the header out for rows, start loop from 2).
+* Run a for loop for both rows and columns(leave the header out for rows, start loop from 2).
 ```
 row_count = len(driver.find_elements_by_xpath("//table/tbody/tr"))
 col_count = len(driver.find_elements_by_xpath("//table/tbody/tr/th"))
@@ -71,3 +71,16 @@ for row in range(2, row_count+1):
         print(data, end="   ")
     print()
 ```
+**Scrolling:**
+* Scrolling down the page by pixels
+  ```
+  driver.execute_script("window.scrollBy(0,2000)", "")
+  ```
+* Scroll down the page till element is found
+  ```
+  driver.execute_script("arguments[0].scrollIntoView();", element)
+  ```
+* Scroll down to the end of the page
+  ```
+  driver.execute_script("window.scrollBy(0, document.body.scrollHeight)")
+  ```
