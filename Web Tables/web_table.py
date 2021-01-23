@@ -22,7 +22,7 @@ for row in range(2, row_count+1):
     print()
 
 # Get the table data and write to excel file
-file = "D:\\Selenium with Python\\Selenium_Basics\\Web_Tables\\table_data.xlsx"
+file = "/Web Tables\\table_data.xlsx"
 workbook = openpyxl.load_workbook(file)
 sheet = workbook['Sheet1']
 

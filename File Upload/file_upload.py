@@ -6,7 +6,7 @@ driver.maximize_window()
 driver.get("http://demo.guru99.com/test/upload/")
 driver.implicitly_wait(5)
 
-file_path = "D:\\Selenium with Python\\Selenium_Basics\\Web_Tables\\table_data.xlsx"
+file_path = "/Web Tables\\table_data.xlsx"
 
 driver.find_element_by_id("uploadfile_0").send_keys(file_path)
 time.sleep(1)

@@ -6,7 +6,7 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get("https://s2.demo.opensourcecms.com/orangehrm/symfony/web/index.php/auth/login")
 
-file = "D:\\Selenium with Python\\Selenium_Basics\\Data_driven\\login.xlsx"
+file = "/Data Driven\\login.xlsx"
 
 rows = excel_utils.get_row_count(file, 'Sheet1')
 cols = excel_utils.get_col_count(file, 'Sheet1')
