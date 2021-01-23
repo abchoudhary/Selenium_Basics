@@ -37,4 +37,15 @@ pip install openpyxl
     sheet.cell(row=row_num, column=col_num).value = data
     workbook.save(file)
     ```
-    
+**Alerts:**
+```
+driver.switch_to.alert.accept()                 (accept the alert by pressing OK)
+driver.switch_to.alert.dismiss()                (dismiss the alert by pressing Cancel)
+driver.switch_to.alert.text                     (get the text from alert)
+```
+**Frames:**
+```
+driver.switch_to.frame(locator)                 (switch to frame)
+driver.switch_to.default_content()              (switch back to main window)
+```
+
