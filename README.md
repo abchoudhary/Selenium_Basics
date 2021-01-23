@@ -2,9 +2,52 @@
 **Installation:**
 ```pip install selenium```
 
+**Browser Drivers:**
+* To avoid passing the executable path, keep the drivers in Scripts folder at location where python is installed and add the path of both Scripts folder and python folder to environment variables.
+```
+driver = webdriver.Chrome(executable_path="")
+driver = webdriver.Firefox()
+driver = webdriver.Ie()
+```
+
 **Input boxes:**
 * Values in input boxes can be entered by using send_keys() method.
 
+**Conditional Commands:**
+```
+is_displayed()
+is_enabled()
+is_selected()
+```
+
+**Navigational commands:**
+```
+driver.back()
+driver.forward()
+```
+
+**Radio Buttons:**
+* Count the number of radio buttons
+  ```
+  len(driver.find_elements_by_name("radioButton"))
+  ```
+* Check if the radio button is selected or not
+  ```
+  driver.find_element_by_xpath("xpath").is_selected()
+  ```
+* Select radio button
+  ```
+  driver.find_element_by_xpath("xpath").click()
+  ```
+**Checkboxes:**
+* Check if the checkbox is checked or not
+  ```
+  driver.find_element_by_id("id").is_selected()
+  ```
+* Select checkbox
+  ```
+  driver.find_element_by_id("id").click()
+  ```
 **Dropdown:**
 ```
 from selenium.webdriver.support.ui import Select
@@ -35,6 +78,21 @@ actions = ActionChains(driver)
     ```
     actions.move_to_element(element1).move_to_element(element2).click().perform()
     ```
+**Waits:**
+* Implicit Wait: Checks the DOM for a certain amount of time when trying to find any element (or elements) not immediately available.
+  ```
+  driver.implicitly_wait(10)
+  # This waits up to 10 seconds before throwing a TimeoutException unless it finds the element to return within 10 seconds.
+  ```
+* Explicit Wait: waits for a certain condition to occur before proceeding further in the code.
+  ```
+  from selenium.webdriver.common.by import By
+  from selenium.webdriver.support.ui import WebDriverWait
+  from selenium.webdriver.support import expected_conditions as ec
+  
+  wait = WebDriverWait(driver, 10)
+  wait.until(ec.visibility_of_element_located((By.CLASS_NAME, "class_name")))
+  ```
 **Data Driven Testing:**
 ```
 pip install openpyxl
