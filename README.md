@@ -2,6 +2,15 @@
 **Installation:**
 ```pip install selenium```
 
+**Dropdown:**
+```
+from selenium.webdriver.support.ui import Select
+dropdown = Select(driver.find_element_by_id("")
+
+dropdown.select_by_visible_text("text")
+dropdown.select_by_value("value")
+dropdown.select_by_index(index)
+```
 **Mouse Actions:**
 ```
 from selenium.webdriver import ActionChains
