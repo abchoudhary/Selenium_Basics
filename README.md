@@ -11,7 +11,7 @@ driver = webdriver.Ie()
 ```
 
 **Input boxes:**
-* Values in input boxes can be entered by using send_keys() method.
+* Values in input boxes can be entered by using `send_keys()` method.
 
 **Conditional Commands:**
 ```
@@ -213,3 +213,21 @@ logger.setLevel(logging.DEBUG)
 
 logger.info("This is an info message")
 ```
+**File Download:**
+* Chrome:
+  ```
+  from selenium.webdriver.chrome.options import Options
+  chrome_options = Options()
+  chrome_options.add_experimental_option("prefs", {"download.default_directory": "D:\Selenium with Python\Selenium_Basics\File Download"})
+  ```
+* Firefox:
+  ```
+  profile = webdriver.FirefoxProfile()
+  profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/plain, application/pdf")
+  profile.set_preference("browser.download.manager.showWhenStarting", False)
+  profile.set_preference("browser.download.folderList", 2)
+  profile.set_preference("browser.download.dir", "D:\\Selenium with Python\\Selenium_Basics\\File Download")
+  profile.set_preference("pdfjs.disabled", True)
+
+  driver = webdriver.Firefox(firefox_profile=profile)
+  ```
