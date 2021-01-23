@@ -48,4 +48,13 @@ driver.switch_to.alert.text                     (get the text from alert)
 driver.switch_to.frame(locator)                 (switch to frame)
 driver.switch_to.default_content()              (switch back to main window)
 ```
+**Multiple Browser Windows**
+```
+driver.current_window_handle                    (get current window handle)
+driver.window_handles                           (get all window handles)
 
+for handle in handles:
+    driver.switch_to.window(handle)
+    print(driver.title)
+driver.close()
+```
