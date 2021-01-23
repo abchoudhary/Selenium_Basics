@@ -31,11 +31,11 @@ pip install openpyxl
     ```
     workbook = openpyxl.load_workbook(file)
     sheet = workbook[sheet_name]
-    sheet.max_row       (returns row count)
-    sheet.max_column    (returns column count)
-    return sheet.cell(row=row_num, column=col_num).value
-    sheet.cell(row=row_num, column=col_num).value = data
-    workbook.save(file)
+    sheet.max_row                                                       (returns row count)
+    sheet.max_column                                                    (returns column count)
+    return sheet.cell(row=row_num, column=col_num).value                (read data from excel file)
+    sheet.cell(row=row_num, column=col_num).value = data                (write data to excel file)
+    workbook.save(file)                                                 (save updated file)
     ```
 **Alerts:**
 ```
