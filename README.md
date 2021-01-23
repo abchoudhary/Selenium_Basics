@@ -2,6 +2,9 @@
 **Installation:**
 ```pip install selenium```
 
+**Input boxes:**
+* Values in input boxes can be entered by using send_keys() method.
+
 **Dropdown:**
 ```
 from selenium.webdriver.support.ui import Select
@@ -92,4 +95,27 @@ for row in range(2, row_count+1):
 * Scroll down to the end of the page
   ```
   driver.execute_script("window.scrollBy(0, document.body.scrollHeight)")
+  ```
+**Screenshots:**
+* driver.save_screenshot("path")
+* driver.get_screenshot_as_file("path")
+
+**Cookies:**
+* Get all cookies:
+  ```
+  driver.get_cookies()
+  len(driver.get_cookies())
+  ```
+* Add a new cookie:
+  ```
+  cookie = {'name': 'MyCookie', 'value': '1234567890'}
+  driver.add_cookie(cookie)
+  ```
+* deleting a cookie:
+  ```
+  driver.delete_cookie("MyCookie")
+  ```
+* deleting all cookies
+  ```
+  driver.delete_all_cookies()
   ```
