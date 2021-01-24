@@ -231,3 +231,28 @@ logger.info("This is an info message")
 
   driver = webdriver.Firefox(firefox_profile=profile)
   ```
+**Accepting Insecure Certificates:**
+* Chrome:
+  ```
+  chrome_options = Options()
+  chrome_options.add_argument("--ignore-certificate-errors")
+  driver = webdriver.Chrome(options=chrome_options)
+  
+  OR
+  
+  capabilities = webdriver.DesiredCapabilities.CHROME
+  capabilities['acceptInsecureCerts'] = True
+  driver = webdriver.Chrome(desired_capabilities=capabilities)
+  ```
+* Firefox:
+  ```
+  profile = webdriver.FirefoxProfile()
+  profile.accept_untrusted_certs = True
+  driver = webdriver.Firefox(firefox_profile=profile)
+  
+  OR
+  
+  capabilities = webdriver.DesiredCapabilities.FIREFOX
+  capabilities['acceptInsecureCerts'] = True
+  driver = webdriver.Firefox(desired_capabilities=capabilities)
+  ```
