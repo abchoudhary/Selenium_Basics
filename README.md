@@ -188,6 +188,18 @@ for row in range(2, row_count+1):
   ```
   driver.delete_all_cookies()
   ```
+
+**Broken Links:**
+* status_code of broken links >= 400
+  ```
+  import requests
+  links = driver.find_elements_by_tag_name('a')
+  for link in links:
+    attr = link.get_attribute('href')
+    req = requests.head(attr)
+	print(attr, req.status_code)
+  ```
+  
 **Logging:**
 ```
 import logging
