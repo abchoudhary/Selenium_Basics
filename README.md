@@ -268,3 +268,24 @@ logger.info("This is an info message")
   capabilities['acceptInsecureCerts'] = True
   driver = webdriver.Firefox(desired_capabilities=capabilities)
   ```
+**Exceptions:**
+  Exceptions in Selenium Python are the errors that occur when one of method fails or an unexpected event occurs.
+  ```
+  try:
+    element = driver.find_element_by_link_text("test")
+    print(element.is_displayed())
+  except NoSuchElementException as err:
+    print("No such element is present")
+  ```
+  1. **NoSuchElementException:** The Element does not exist on the website.
+  2. **TimeoutException:** Thrown when a command does not complete in enough time.
+  3. **ElementNotVisibleException:**	Thrown when an element is present on the DOM, but it is not visible, and so is not able to be interacted with.
+  4. **ElementNotInteractableException** Thrown when an element is present in the DOM but interactions with that element will hit another element do to paint order.
+  5. **ElementNotSelectableException:** Thrown when trying to select an unselectable element.   
+  6. **NoSuchFrameException:** Thrown when frame target to be switched doesn’t exist.
+  7. **NoSuchWindowException:** Thrown when window target to be switched doesn’t exist.
+  8. **NoAlertPresentException:** Thrown when switching to no presented alert.
+  9. **UnexpectedAlertPresentException:** Thrown when an unexpected alert is appeared.
+  10. **NoSuchAttributeException:** Thrown when the attribute of element could not be found.
+  11. **StaleElementReferenceException:** Thrown when a reference to an element is now “stale”.
+
