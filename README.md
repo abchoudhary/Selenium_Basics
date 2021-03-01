@@ -279,6 +279,7 @@ logger.info("This is an info message")
   except NoSuchElementException as err:
     print("No such element is present")
   ```
+Few of the exceptions are mentioned below:
   1. **NoSuchElementException:** The Element does not exist on the website.
   2. **TimeoutException:** Thrown when a command does not complete in enough time.
   3. **ElementNotVisibleException:**	Thrown when an element is present on the DOM, but it is not visible, and so is not able to be interacted with.
